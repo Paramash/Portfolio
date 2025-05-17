@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Dye</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js" defer></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            scroll-behavior: smooth;
+        }
+
+        .logo {
+            margin-right: auto;
+            /* Pushes the logo to the left */
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #home img {
+            transition: transform 0.5s ease;
+            /* Smooth zoom effect */
+        }
+
+        @media (max-width: 768px) {
+
+            /* Target screens smaller than 768px */
+            #home img {
+                transform: scale(1);
+                /* Zoom the image */
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-900">
+    <!-- Navigation Bar -->
+    <!-- <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="max-w-10xl mx-auto flex justify-between items-center p-4"> -->
+    <!-- <div class="w-full flex justify-between items-center p-4"></div> -->
+    <!-- <a href="#home" class="text-lg font-bold">Display Dye</a>
+            <div class="space-x-4">
+                <a href="#home" class="hover:text-blue-600">Home</a>
+                <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
+                <a href="#about" class="hover:text-blue-600">About</a>
+                <a href="#contact" class="hover:text-blue-600">Contact</a>
+            </div>
+        </div> 
+    </nav> -->
+    <nav class="fixed top-0 left-0 w-full shadow-md z-50 items-center justify-center bg-cover bg-center"
+        style="background-image: url('imgs/IMG_6403.jpg');">
+        <div class="max-w-10xl mx-auto flex justify-between items-center p-4">
+            <!-- <a href="#home" class="text-lg font-bold text-white hover:text-gray-300">Display Dye</a> -->
+            <!-- <a href="#home" class="text-lg font-bold text-white hover:text-gray-300">Display Dye</a> -->
+            <a href="#home" class="text-lg font-bold text-white hover:text-gray-300"
+                style="font-family: 'Great Vibes', cursive;">
+                Display Dye
+            </a>
+            <!-- Burger Menu Button -->
+            <button id="menu-btn" class="block sm:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+            <!-- Navigation Links -->
+            <div id="menu" class="hidden sm:flex space-x-4">
+                <a href="#home" class="text-white hover:text-gray-300">Home</a>
+                <a href="#portfolio" class="text-white hover:text-gray-300">Portfolio</a>
+                <a href="#about" class="text-white hover:text-gray-300">About</a>
+                <a href="#contact" class="text-white hover:text-gray-300">Contact</a>
+                <a href="https://www.instagram.com/display_dye?igsh=aThmc3FsZWRvNWU0" target="_blank"
+                    class="hover:opacity-75">
+                    <img src="imgs/logo.png" alt="Instagram" class="w-6 h-6">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <!-- <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('');"> -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-cover bg-center"
+        style="background-image: url('imgs/main.jpg');">
+        <div class="text-center text-white">
+            <!-- <h1 class="text-4xl md:text-6xl font-bold mb-4">Display Dye</h1> -->
+            <!-- <h1 class="text-4xl md:text-6xl font-bold mb-4 transition-all duration-500 hover:text-black">Display Dye</h1> -->
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 transition-all duration-500 hover:text-black"
+                style="font-family: 'Great Vibes', cursive;">
+                Display Dye
+            </h1>
+            <!-- <p class="text-lg md:text-xl">Capturing moments that matter</p> -->
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <!-- <section id="portfolio" class="py-16 pb-40 bg-white-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Portfolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"> -->
+    <!-- Replace with your images -->
+    <!-- <div class="relative h-32 sm:h-48">
+                    <img src="imgs/IMG_5547.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="relative h-32 sm:h-48">
+                    <img src="imgs/IMG_0707.jpg" alt="" class="w-full h-auto rounded-lg shadow-md" style="height: 236%;">
+                </div>
+                <div class="relative h-32 sm:h-48">
+                    <img src="imgs/IMG_6113.jpg" alt="" class="w-full h-auto rounded-lg shadow-md" style="height: 100%;">
+                </div>
+                <div class="relative h-60">
+                    <img src="imgs/IMG_6403.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+               <div class="relative h-60 lg:col-start-3 lg:row-start-2">
+                    <img src="imgs/IMG_0306.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md" style="height: 102%;">
+               </div>
+               <div class="relative h-32 sm:h-48 lg:col-start-1 lg:row-start-3">
+                    <img src="imgs/tree.jpg" alt="Tree" class="w-full h-auto object-cover rounded-lg shadow-md" style="height: 180%;">
+               </div>
+               <div class="relative h-32 sm:h-48 lg:col-start-2 lg:row-start-3">
+                    <img src="imgs/sunrise2.JPG" alt="" class="w-full h-auto rounded-lg shadow-md" style="height: 180%;">
+               </div>
+               <div class="relative h-60 lg:col-start-3 lg:row-start-3">
+                    <img src="imgs/bike.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md" style="height: 145%;">
+               </div>
+            </div>
+        </div>
+    </section> -->
+    <section id="portfolio" class="py-16 pb-40 bg-white-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Portfolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="relative h-52 sm:h-52">
+                    <img src="imgs/IMG_5547.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="relative h-full sm:h-full">
+                    <img src="imgs/IMG_0707.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="relative h-52 sm:h-52">
+                    <img src="imgs/IMG_6113.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="relative h-52 sm:h-60 lg:-mt-64">
+                    <img src="imgs/IMG_6403.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <!-- <div class="relative h-48 sm:h-60 lg:-mt-64">
+                    <img src="imgs/tree.jpg" alt="Tree" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div> -->
+                <!-- <div class="relative h-48 sm:h-60 lg:-mt-64 flex justify-end items-center lg:col-start-3">
+                    <img src="imgs/tree.jpg" alt="Tree" class="w-32 h-32 sm:w-full sm:h-full object-cover rounded-lg shadow-md">
+                </div> -->
+                <div class="relative h-full sm:h-60 flex lg:-mt-64 justify-center lg:justify items-center lg:col-start-3">
+                    <img src="imgs/tree.jpg" alt="Tree"
+                        class="w-full h-full sm:w-full sm:h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="relative h-full sm:h-80 flex lg:-mt-2 justify-center lg:justify items-center lg:col-start-1">
+                    <img src="imgs/bike.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="relative h-full sm:h-80 lg:-mt-2">
+                    <img src="imgs/sunrise2.JPG" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="relative h-80 sm:h-80 justify-center lg:justify items-center lg:col-start-3 lg:-mt-2">
+                    <img src="imgs/IMG_0306.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <!-- <div class="relative h-48 sm:h-64">
+                    <img src="imgs/mountains.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-48 bg-cover bg-center" style="background-image: url('imgs/IMG_5771.jpg');">
+        <div class="max-w-4xl mx-auto px-4 text-center -mt-16">
+            <img src="imgs/IMG_8524.jpg" alt="Your Photo"
+                class="mx-auto mb-6 w-40 h-40 rounded-full object-cover shadow-lg">
+            <h2 class="text-3xl text-white mb-8 font-semibold">About Me</h2>
+            <p class="text-lg text-white font-semibold">
+                My journey into photography began at the age of 15, with a small Sony
+                digital camera and a big dream. Over the years, I’ve explored the art of
+                capturing moments, evolving into a versatile photographer who sees beauty
+                in all styles and subjects. While I currently enjoy capturing moments with
+                my mobile phone, I am highly skilled in using cameras, blending creativity
+                with technical proficiency. To me, photography is the art of freezing time,
+                preserving its beauty so we can relive and admire it in the future.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-44 bg-cover bg-center" style="background-image: url('imgs/IMG_3442.jpg');">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+            <form action="#" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Your Name" class="w-full p-2 border rounded-lg">
+                    <input type="email" placeholder="Your Email" class="w-full p-2 border rounded-lg">
+                </div>
+                <textarea placeholder="Your Message" class="w-full p-2 border rounded-lg h-32"></textarea>
+                <div class="text-center">
+                    <button type="submit"
+                        class="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700">Send
+                        Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('section', {
+            distance: '50px',
+            duration: 800,
+            easing: 'ease-in-out',
+            origin: 'bottom',
+            interval: 100,
+        });
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
