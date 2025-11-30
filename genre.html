@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genres - Display Dye</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js" defer></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            scroll-behavior: smooth;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.2s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .fade-in-target {
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+
+        .fade-in-target.visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        @media (max-width: 640px) {
+
+            #portrait-prev,
+            #portrait-next {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-900">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full shadow-md z-50 items-center justify-center bg-cover bg-center"
+        style="background-image: url('imgs/IMG_6403.jpg');">
+        <div class="max-w-10xl mx-auto flex justify-between items-center p-4 relative">
+            <a href="index.html" class="text-lg font-bold text-white hover:text-gray-300"
+                style="font-family: 'Great Vibes', cursive;">Display Dye</a>
+            <!-- Burger Menu Button -->
+            <button id="menu-btn" class="block sm:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+            <!-- Navigation Links -->
+            <div id="menu"
+                class="hidden absolute top-full left-0 w-full bg-gray-900/95 sm:static sm:bg-transparent sm:flex sm:w-auto sm:items-center flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 py-4 sm:py-0">
+                <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+                <a href="genre.html" class="text-white hover:text-gray-300">Genre</a>
+                <a href="index.html#portfolio" class="text-white hover:text-gray-300">Portfolio</a>
+                <a href="index.html#about" class="text-white hover:text-gray-300">About</a>
+                <a href="index.html#contact" class="text-white hover:text-gray-300">Contact</a>
+                <a href="https://www.instagram.com/display_dye?igsh=aThmc3FsZWRvNWU0" target="_blank"
+                    class="hover:opacity-75"><img src="imgs/logo.png" alt="Instagram" class="w-6 h-6"></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Optional Hero -->
+    <section class="min-h-[40vh] flex items-center justify-center bg-cover bg-center"
+        style="background-image: url('imgs/main.jpg'); margin-top:60px;">
+        <div class="text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2" style="font-family: 'Great Vibes', cursive;">Genres</h1>
+            <p class="text-lg md:text-xl">Exploring different styles of photography</p>
+        </div>
+    </section>
+
+    <!-- Portrait Section (horizontal scroll with auto-slide, arrows, fade-in, lazy load) -->
+    <section id="portrait" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <h2 class="text-3xl font-bold text-center mb-6">Portrait</h2>
+            <div class="relative">
+                <button id="portrait-prev" aria-label="Previous"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">‹</button>
+                <div id="portrait-track"
+                    class="overflow-x-auto scroll-smooth no-scrollbar flex gap-4 py-4 px-2 snap-x snap-mandatory"
+                    style="scroll-behavior: smooth;">
+                    <div class="flex-shrink-0 w-80 h-96 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Portrait\apr_window.jpg" alt="Portrait 1"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-96 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs/Portrait/DSC09055.jpg" alt="Portrait 2"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-96 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs/Portrait/IMG_6297.jpg" alt="Portrait 3"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-96 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Portrait\IMG_6319.jpg" alt="Portrait 4"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-96 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Portrait\DSC05411.jpg" alt="Portrait 5"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-96 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Portrait\IMG_E3510-Edit.jpg" alt="Portrait 6"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-96 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Portrait\DSC08982-Edit.jpg" alt="Portrait 7"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-96 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Portrait\DSC05496.jpg" alt="Portrait 8"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-96 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Portrait\IMG_6270.jpg" alt="Portrait 9"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                </div>
+                <button id="portrait-next" aria-label="Next"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landscape Section -->
+    <!-- <section id="landscape" class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Landscape</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="relative h-64"><img src="imgs/sunrise2.JPG" alt="Landscape"
+                        class="w-full h-full object-cover rounded-lg shadow-md"></div>
+                <div class="relative h-64"><img src="imgs/tree.jpg" alt="Landscape"
+                        class="w-full h-full object-cover rounded-lg shadow-md"></div>
+                <div class="relative h-64"><img src="imgs/IMG_6403.jpg" alt="Landscape"
+                        class="w-full h-full object-cover rounded-lg shadow-md"></div>
+            </div>
+        </div>
+    </section> -->
+    <!-- ##################################  -->
+    <section id="landscape" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <h2 class="text-3xl font-bold text-center mb-6">Landscape</h2>
+            <div class="relative">
+                <button id="landscape-prev" aria-label="Previous"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">‹</button>
+                <div id="landscape-track"
+                    class="overflow-x-auto scroll-smooth no-scrollbar flex gap-4 py-4 px-2 snap-x snap-mandatory"
+                    style="scroll-behavior: smooth;">
+                        <div class="flex-shrink-0 w-96 h-64 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs/sunrise2.JPG" alt="Landscape 1" class="w-full h-full object-cover rounded-lg"
+                            loading="lazy"></div>
+                        <div class="flex-shrink-0 w-96 h-64 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs/tree.jpg" alt="Landscape 2" class="w-full h-full object-cover rounded-lg"
+                            loading="lazy"></div>
+                        <div class="flex-shrink-0 w-96 h-64 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\IMG_5547.jpg" alt="Landscape 3" class="w-full h-full object-cover rounded-lg"
+                            loading="lazy"></div>
+                        <div class="flex-shrink-0 w-96 h-64 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Gas Station.jpg" alt="Landscape 4" class="w-full h-full object-cover rounded-lg"
+                            loading="lazy"></div>
+                        <div class="flex-shrink-0 w-96 h-64 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\mountains.jpg" alt="Landscape 5" class="w-full h-full object-cover rounded-lg"
+                            loading="lazy"></div>
+                        <div class="flex-shrink-0 w-96 h-64 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\IMG_6113.jpg" alt="Landscape 6" class="w-full h-full object-cover rounded-lg"
+                            loading="lazy"></div>
+                        <div class="flex-shrink-0 w-96 h-64 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\IMG_3442.jpg" alt="Landscape 7" class="w-full h-full object-cover rounded-lg"
+                            loading="lazy"></div>
+                </div>
+                <button id="landscape-next" aria-label="Next"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ################################## -->
+
+    <!-- Minimalism Section -->
+    <!-- <section id="minimalism" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Minimalism</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="relative h-64"><img src="imgs/IMG_0707.jpg" alt="Minimalism"
+                        class="w-full h-full object-cover rounded-lg shadow-md"></div>
+                <div class="relative h-64 bg-gray-200 rounded-lg shadow-md flex items-center justify-center"><span
+                        class="text-gray-500">Minimalism 2</span></div>
+                <div class="relative h-64 bg-gray-200 rounded-lg shadow-md flex items-center justify-center"><span
+                        class="text-gray-500">Minimalism 3</span></div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="Minimalism" class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <h2 class="text-3xl font-bold text-center mb-6">Minimalism</h2>
+            <div class="relative">
+                <button id="minimalism-prev" aria-label="Previous"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">‹</button>
+                <div id="minimalism-track"
+                    class="overflow-x-auto scroll-smooth no-scrollbar flex gap-4 py-4 px-2 snap-x snap-mandatory"
+                    style="scroll-behavior: smooth;">
+                    <div class="flex-shrink-0 w-100 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs/IMG_0707.jpg" alt="minimalism 1" class="w-full h-full object-cover rounded-lg"
+                            loading="lazy"></div>
+                    <div class="flex-shrink-0 w-100 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\minimalisam\DSC09001-Edit.jpg" alt="minimalism 2"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-100 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\minimalisam\IMG_E0533.jpg" alt="minimalism 3"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\minimalisam\IMG_2955.jpg" alt="minimalism 4"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-100 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\minimalisam\1762506250696-Edit.jpg" alt="minimalism 5"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-100 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\minimalisam\DSC09006-Edit.jpg" alt="minimalism 6"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\minimalisam\IMG_5567-Edit.jpg" alt="minimalism 7"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\minimalisam\DSC03116-Edit.jpg" alt="minimalism 8"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\minimalisam\1761907554815-Enhanced-NR-Edit.jpg" alt="minimalism 9"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                </div>
+                <button id="minimalism-next" aria-label="Next"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">›</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Automobiles Section -->
+    <!-- <section id="automobiles" class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Automobiles</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="relative h-64"><img src="imgs/bike.jpg" alt="Automobiles"
+                        class="w-full h-full object-cover rounded-lg shadow-md"></div>
+                <div class="relative h-64 bg-gray-200 rounded-lg shadow-md flex items-center justify-center"><span
+                        class="text-gray-500">Automobiles 2</span></div>
+                <div class="relative h-64 bg-gray-200 rounded-lg shadow-md flex items-center justify-center"><span
+                        class="text-gray-500">Automobiles 3</span></div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="Automobiles" class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <h2 class="text-3xl font-bold text-center mb-6">Automobiles</h2>
+            <div class="relative">
+                <button id="Automobiles-prev" aria-label="Previous"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">‹</button>
+                <div id="Automobiles-track"
+                    class="overflow-x-auto scroll-smooth no-scrollbar flex gap-4 py-4 px-2 snap-x snap-mandatory"
+                    style="scroll-behavior: smooth;">
+                    <div class="flex-shrink-0 w-80 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs/bike.jpg" alt="Automobiles 1" class="w-full h-full object-cover rounded-lg"
+                            loading="lazy"></div>
+                    <div class="flex-shrink-0 w-100 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Automobiles\DSC03182-Edit.jpg" alt="Automobiles 2"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Automobiles\DSC08177.jpg" alt="Automobiles 3"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-100 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Automobiles\IMG_4242-Edit.jpg" alt="Automobiles 4"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Automobiles\DSC07903-2.jpg" alt="Automobiles 5"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <div class="flex-shrink-0 w-80 h-80 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\Automobiles\nt_bike.jpg" alt="Automobiles 6"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div>
+                    <!--<div class="flex-shrink-0 w-80 h-60 rounded-lg shadow-md bg-gray-100 snap-start relative"><img
+                            src="imgs\minimalisam\DSC03116-Edit.jpg" alt="minimalism 8"
+                            class="w-full h-full object-cover rounded-lg" loading="lazy"></div> -->
+                </div>
+                <button id="Automobiles-next" aria-label="Next"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">›</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section (Simplified) -->
+    <section id="contact" class="py-24 bg-cover bg-center" style="background-image: url('imgs/IMG_3442.jpg');">
+        <div class="max-w-4xl mx-auto px-4 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Get in Touch</h2><a href="index.html#contact"
+                class="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700">Contact Me</a>
+        </div>
+    </section>
+
+    <script>
+        // Initialize ScrollReveal
+        if (window.ScrollReveal) {
+            ScrollReveal().reveal('section', { distance: '50px', duration: 800, easing: 'ease-in-out', origin: 'bottom', interval: 100 });
+        }
+
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        if (menuBtn && menu) {
+            menuBtn.addEventListener('click', () => { menu.classList.toggle('hidden'); menu.classList.toggle('flex'); });
+        }
+
+        (function () {
+            const track = document.getElementById('portrait-track');
+            const prevBtn = document.getElementById('portrait-prev');
+            const nextBtn = document.getElementById('portrait-next');
+            if (!track) return;
+
+            let cards = Array.from(track.querySelectorAll('.flex-shrink-0'));
+            const AUTO_INTERVAL = 3000; // ms
+            let autoTimer = null;
+            let isHovering = false;
+
+            function scrollByCard(offsetMultiplier = 1) {
+                cards = Array.from(track.querySelectorAll('.flex-shrink-0'));
+                if (!cards.length) return;
+                const card = cards[0];
+                const gap = 16; // tailwind gap-4 default
+                const cardWidth = card.getBoundingClientRect().width;
+                const amount = (cardWidth + gap) * offsetMultiplier;
+                track.scrollBy({ left: amount, behavior: 'smooth' });
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => { scrollByCard(-1); resetAuto(); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { scrollByCard(1); resetAuto(); });
+
+            function startAuto() {
+                if (autoTimer) clearInterval(autoTimer);
+                autoTimer = setInterval(() => {
+                    if (isHovering) return;
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    if (track.scrollLeft >= maxScroll - 10) {
+                        track.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        scrollByCard(1);
+                    }
+                }, AUTO_INTERVAL);
+            }
+
+            function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+            function resetAuto() { stopAuto(); startAuto(); }
+
+            track.addEventListener('mouseenter', () => { isHovering = true; });
+            track.addEventListener('mouseleave', () => { isHovering = false; });
+            track.addEventListener('focusin', () => { isHovering = true; });
+            track.addEventListener('focusout', () => { isHovering = false; });
+
+            track.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') { scrollByCard(-1); resetAuto(); } if (e.key === 'ArrowRight') { scrollByCard(1); resetAuto(); } });
+
+            startAuto();
+
+            let userScrollTimeout;
+            track.addEventListener('scroll', () => { clearTimeout(userScrollTimeout); userScrollTimeout = setTimeout(resetAuto, 1000); });
+
+            track.tabIndex = 0;
+        })();
+
+        (function () {
+            const track = document.getElementById('landscape-track');
+            const prevBtn = document.getElementById('landscape-prev');
+            const nextBtn = document.getElementById('landscape-next');
+            if (!track) return;
+
+            let cards = Array.from(track.querySelectorAll('.flex-shrink-0'));
+            const AUTO_INTERVAL = 3000; // ms
+            let autoTimer = null;
+            let isHovering = false;
+
+            function scrollByCard(offsetMultiplier = 1) {
+                cards = Array.from(track.querySelectorAll('.flex-shrink-0'));
+                if (!cards.length) return;
+                const card = cards[0];
+                const gap = 16; // tailwind gap-4 default
+                const cardWidth = card.getBoundingClientRect().width;
+                const amount = (cardWidth + gap) * offsetMultiplier;
+                track.scrollBy({ left: amount, behavior: 'smooth' });
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => { scrollByCard(-1); resetAuto(); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { scrollByCard(1); resetAuto(); });
+
+            function startAuto() {
+                if (autoTimer) clearInterval(autoTimer);
+                autoTimer = setInterval(() => {
+                    if (isHovering) return;
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    if (track.scrollLeft >= maxScroll - 10) {
+                        track.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        scrollByCard(1);
+                    }
+                }, AUTO_INTERVAL);
+            }
+            function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+            function resetAuto() { stopAuto(); startAuto(); }
+
+            track.addEventListener('mouseenter', () => { isHovering = true; });
+            track.addEventListener('mouseleave', () => { isHovering = false; });
+            track.addEventListener('focusin', () => { isHovering = true; });
+            track.addEventListener('focusout', () => { isHovering = false; });
+
+            track.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') { scrollByCard(-1); resetAuto(); } if (e.key === 'ArrowRight') { scrollByCard(1); resetAuto(); } });
+
+            startAuto();
+
+            let userScrollTimeout;
+            track.addEventListener('scroll', () => { clearTimeout(userScrollTimeout); userScrollTimeout = setTimeout(resetAuto, 1000); });
+
+            track.tabIndex = 0;
+        })();
+
+        (function () {
+            const track = document.getElementById('minimalism-track');
+            const prevBtn = document.getElementById('minimalism-prev');
+            const nextBtn = document.getElementById('minimalism-next');
+            if (!track) return;
+
+            let cards = Array.from(track.querySelectorAll('.flex-shrink-0'));
+            const AUTO_INTERVAL = 3000; // ms
+            let autoTimer = null;
+            let isHovering = false;
+
+            function scrollByCard(offsetMultiplier = 1) {
+                cards = Array.from(track.querySelectorAll('.flex-shrink-0'));
+                if (!cards.length) return;
+                const card = cards[0];
+                const gap = 16; // tailwind gap-4 default
+                const cardWidth = card.getBoundingClientRect().width;
+                const amount = (cardWidth + gap) * offsetMultiplier;
+                track.scrollBy({ left: amount, behavior: 'smooth' });
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => { scrollByCard(-1); resetAuto(); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { scrollByCard(1); resetAuto(); });
+
+            function startAuto() {
+                if (autoTimer) clearInterval(autoTimer);
+                autoTimer = setInterval(() => {
+                    if (isHovering) return;
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    if (track.scrollLeft >= maxScroll - 10) {
+                        track.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        scrollByCard(1);
+                    }
+                }, AUTO_INTERVAL);
+            }
+            function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+            function resetAuto() { stopAuto(); startAuto(); }
+
+            track.addEventListener('mouseenter', () => { isHovering = true; });
+            track.addEventListener('mouseleave', () => { isHovering = false; });
+            track.addEventListener('focusin', () => { isHovering = true; });
+            track.addEventListener('focusout', () => { isHovering = false; });
+
+            track.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') { scrollByCard(-1); resetAuto(); } if (e.key === 'ArrowRight') { scrollByCard(1); resetAuto(); } });
+
+            startAuto();
+
+            let userScrollTimeout;
+            track.addEventListener('scroll', () => { clearTimeout(userScrollTimeout); userScrollTimeout = setTimeout(resetAuto, 1000); });
+
+            track.tabIndex = 0;
+        })();
+
+        (function () {
+            const track = document.getElementById('Automobiles-track');
+            const prevBtn = document.getElementById('Automobiles-prev');
+            const nextBtn = document.getElementById('Automobiles-next');
+            if (!track) return;
+
+            let cards = Array.from(track.querySelectorAll('.flex-shrink-0'));
+            const AUTO_INTERVAL = 3000; // ms
+            let autoTimer = null;
+            let isHovering = false;
+
+            function scrollByCard(offsetMultiplier = 1) {
+                cards = Array.from(track.querySelectorAll('.flex-shrink-0'));
+                if (!cards.length) return;
+                const card = cards[0];
+                const gap = 16; // tailwind gap-4 default
+                const cardWidth = card.getBoundingClientRect().width;
+                const amount = (cardWidth + gap) * offsetMultiplier;
+                track.scrollBy({ left: amount, behavior: 'smooth' });
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => { scrollByCard(-1); resetAuto(); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { scrollByCard(1); resetAuto(); });
+
+            function startAuto() {
+                if (autoTimer) clearInterval(autoTimer);
+                autoTimer = setInterval(() => {
+                    if (isHovering) return;
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    if (track.scrollLeft >= maxScroll - 10) {
+                        track.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        scrollByCard(1);
+                    }
+                }, AUTO_INTERVAL);
+            }
+            function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+            function resetAuto() { stopAuto(); startAuto(); }
+
+            track.addEventListener('mouseenter', () => { isHovering = true; });
+            track.addEventListener('mouseleave', () => { isHovering = false; });
+            track.addEventListener('focusin', () => { isHovering = true; });
+            track.addEventListener('focusout', () => { isHovering = false; });
+
+            track.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') { scrollByCard(-1); resetAuto(); } if (e.key === 'ArrowRight') { scrollByCard(1); resetAuto(); } });
+
+            startAuto();
+
+            let userScrollTimeout;
+            track.addEventListener('scroll', () => { clearTimeout(userScrollTimeout); userScrollTimeout = setTimeout(resetAuto, 1000); });
+
+            track.tabIndex = 0;
+        })();
+
+    </script>
+
+</body>
+
+</html>
