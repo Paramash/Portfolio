@@ -48,6 +48,14 @@
                 transform: scale(1);
                 /* Zoom the image */
             }
+
+            #menu.hidden {
+                display: none !important;
+            }
+
+            #menu.show {
+                display: flex !important;
+            }
         }
     </style>
 </head>
@@ -61,16 +69,16 @@
                 style="font-family: 'Great Vibes', cursive;">
                 Display Dye
             </a> -->
-            <!-- Burger Menu Button -->
-            <!-- <button id="menu-btn" class="block sm:hidden text-white focus:outline-none">
+    <!-- Burger Menu Button -->
+    <!-- <button id="menu-btn" class="block sm:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
                     </path>
                 </svg>
             </button> -->
-            <!-- Navigation Links -->
-            <!-- <div id="menu"
+    <!-- Navigation Links -->
+    <!-- <div id="menu"
                 class="hidden absolute top-full left-0 w-full bg-gray-900/95 sm:static sm:bg-transparent sm:flex sm:w-auto sm:items-center flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 py-4 sm:py-0">
                 <a href="#home" class="text-white hover:text-gray-300">Home</a>
                 <a href="genre.html" class="text-white hover:text-gray-300">Genre</a>
@@ -101,14 +109,14 @@
             </button>
             <!-- Navigation Links -->
             <div id="menu"
-                class="hidden absolute top-full left-0 w-full bg-gray-900/95 sm:static sm:bg-transparent sm:flex sm:w-auto sm:items-center flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 py-4 sm:py-0">
-                <a href="index.html" class="text-white hover:text-gray-300">Home</a>
-                <a href="genre.html" class="text-white hover:text-gray-300">Genre</a>
-                <a href="index.html#portfolio" class="text-white hover:text-gray-300">Portfolio</a>
-                <a href="index.html#about" class="text-white hover:text-gray-300">About</a>
-                <a href="index.html#contact" class="text-white hover:text-gray-300">Contact</a>
+                class="hidden sm:flex flex-col sm:flex-row absolute sm:static top-full left-0 w-full sm:w-auto bg-gray-900/95 sm:bg-transparent sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 py-4 sm:py-0 px-4 sm:px-0">
+                <a href="index.html" class="text-white hover:text-gray-300 block">Home</a>
+                <a href="genre.html" class="text-white hover:text-gray-300 block">Genre</a>
+                <a href="index.html#portfolio" class="text-white hover:text-gray-300 block">Portfolio</a>
+                <a href="index.html#about" class="text-white hover:text-gray-300 block">About</a>
+                <a href="index.html#contact" class="text-white hover:text-gray-300 block">Contact</a>
                 <a href="https://www.instagram.com/display_dye?igsh=aThmc3FsZWRvNWU0" target="_blank"
-                    class="hover:opacity-75"><img src="imgs/logo.png" alt="Instagram" class="w-6 h-6"></a>
+                    class="hover:opacity-75 block"><img src="imgs/logo.png" alt="Instagram" class="w-6 h-6"></a>
             </div>
         </div>
     </nav>
@@ -156,13 +164,13 @@
                 <div class="relative h-80 sm:h-80 justify-center lg:justify items-center lg:col-start-3 lg:-mt-2">
                     <img src="imgs/IMG_0306.jpg" alt="" class="w-full h-full object-cover rounded-lg shadow-md">
                 </div>
-                </div>
+            </div>
 
-                <div class="w-full text-center mt-6">
-                    <a id="genre-btn" href="genre.html" class="inline-block px-6 py-2 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700">
-                        Explore Genres
-                    </a>
-                </div>
+            <div class="w-full text-center mt-6">
+                <a id="genre-btn" href="genre.html"
+                    class="inline-block px-6 py-2 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700">
+                    Explore Genres
+                </a>
             </div>
         </div>
     </section>
@@ -183,13 +191,18 @@
                 preserving its beauty so we can relive and admire it in the future.
             </p> -->
             <p class="text-lg text-white font-semibold">
-               My journey into photography began at 15 — just me, a small Sony digital camera, and a dream bigger than the lens I held. Since then, I’ve explored countless styles, moments, and moods, learning to find beauty in the simplest details and the most unexpected places.
+                My journey into photography began at 15 — just me, a small Sony digital camera, and a dream bigger than
+                the lens I held. Since then, I’ve explored countless styles, moments, and moods, learning to find beauty
+                in the simplest details and the most unexpected places.
 
-                Most of the photographs showcased here are captured on an iPhone 13 (base model), a reminder that powerful storytelling comes from vision, not equipment. Whether I’m shooting on a phone or a professional camera, I bring the same blend of creativity, instinct, and technical skill to every frame.
+                Most of the photographs showcased here are captured on an iPhone 13 (base model), a reminder that
+                powerful storytelling comes from vision, not equipment. Whether I’m shooting on a phone or a
+                professional camera, I bring the same blend of creativity, instinct, and technical skill to every frame.
 
-                For me, photography is more than a craft — it’s the art of holding onto time, preserving emotions and memories so they can be felt again and again.
-            </p>   
-            </div>
+                For me, photography is more than a craft — it’s the art of holding onto time, preserving emotions and
+                memories so they can be felt again and again.
+            </p>
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -213,20 +226,53 @@
 
     <script>
         // Initialize ScrollReveal
-        ScrollReveal().reveal('section', {
-            distance: '50px',
-            duration: 800,
-            easing: 'ease-in-out',
-            origin: 'bottom',
-            interval: 100,
-        });
+        if (window.ScrollReveal) {
+            ScrollReveal().reveal('section', {
+                distance: '50px',
+                duration: 800,
+                easing: 'ease-in-out',
+                origin: 'bottom',
+                interval: 100,
+            });
+        }
+
+        // Burger Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-        });
+
+        if (menuBtn && menu) {
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('show');
+            });
+
+            // Close menu when a link is clicked
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('show');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('nav')) {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('show');
+                }
+            });
+        }
     </script>
+</body>
+
+</html>
+// });
+// });
+// } else {
+// console.error('Menu button or menu element not found');
+// }
+</script>
 </body>
 
 </html>
